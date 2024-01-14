@@ -1,8 +1,11 @@
 # Dotnet Containers
 
 This project is using Docker Compose to define and manage a multi-container application. Docker Compose is a tool that allows you to define and run multi-container Docker applications using a YAML file.
-In this specific project, the docker-compose.yml file is defining two services: demo-containers and app_db.
+
+The docker-compose.yml file is defining two services: demo-containers and app_db.
+
 The demo-containers service is using an image called democontainers from the Docker Hub registry. It depends on the app_db service, which is using the postgres:latest image. The demo-containers service is exposing port 8088 on the host machine and mapping it to port 80 inside the container. It is also specifying a build context and Dockerfile for building the image. Additionally, it sets environment variables for the connection string and ASP.NET Core URLs. Both services are connected to a network called dev.
+
 The app_db service is responsible for running a PostgreSQL database. It sets environment variables for the PostgreSQL user, password, and database name. It exposes port 5433 on the host machine and maps it to port 5432 inside the container. It also specifies a volume for persisting the database data. The service is set to restart always, ensuring that it automatically restarts if it stops unexpectedly.
 
 ## Files
